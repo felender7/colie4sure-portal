@@ -1,7 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  get 'license_renewal/index'
+  get '/license-renewal', to: 'license_renewal#index'
   resources :garages
   get '/privacy', to: 'home#privacy'
   get '/terms', to: 'home#terms'

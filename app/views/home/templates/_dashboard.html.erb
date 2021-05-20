@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
   <h3 class="mt-4">Hi, <%=current_user.name.titlecase%></h3>
   <ol class="breadcrumb mb-4">
@@ -19,7 +20,7 @@
     </div>
     <div class="col-xl-3 col-md-6">
       <div class="card bg-warning text-white mb-4">
-        <div class="card-body">My Garage</div>
+        <div class="card-body"> <i class="fas fa-car"></i> My Garage</div>
         <div class="card-footer d-flex align-items-center justify-content-between">
           <a class="small text-white stretched-link" href="#">View Details</a>
           <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -28,7 +29,7 @@
     </div>
     <div class="col-xl-3 col-md-6">
       <div class="card bg-success text-white mb-4">
-        <div class="card-body">License Renewal</div>
+        <div class="card-body"><i class="fas fa-file-alt"></i> License Renewal</div>
         <div class="card-footer d-flex align-items-center justify-content-between">
           <a class="small text-white stretched-link" href="#">View Details</a>
           <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -37,7 +38,7 @@
     </div>
     <div class="col-xl-3 col-md-6">
       <div class="card bg-danger text-white mb-4">
-        <div class="card-body">Fines</div>
+        <div class="card-body"> <i class="far fa-credit-card"></i> Fines</div>
         <div class="card-footer d-flex align-items-center justify-content-between">
           <a class="small text-white stretched-link" href="#">View Details</a>
           <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -67,3 +68,81 @@
     </div>
   </div>
 </div>
+
+<script>
+var ctx = document.getElementById('myBarChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["April", "May"],
+        datasets: [{
+            label: '#Overview',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+
+
+
+<script>
+var ctx = document.getElementById('myAreaChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["April", "May"],
+        datasets: [{
+            label: '#Fines',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>

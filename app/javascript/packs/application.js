@@ -9,7 +9,9 @@ require("@rails/activestorage").start()
 require("channels")
 require("local-time").start()
 require('data-confirm-modal').start()
-
+require("packs/chart-area-demo").start()
+require("packs/chart-bar-demo").start()
+require("packs/chart-pie-demo").start()
 window.Rails = Rails
 
 import 'bootstrap'

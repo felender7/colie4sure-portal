@@ -4,14 +4,24 @@
     <%= render 'shared/head' %>
   </head>
 
-  <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/notices' %>
-
-    <div class="container mx-auto">
-      <%= yield %>
-    </div>
-
-    <%= render 'shared/footer' %>
+<%if user_signed_in?%>
+  <body class="sb-nav-fixed">
+    <%= render 'shared/navbar_signed_in'%>
+    <div id="layoutSidenav" style=width:100%>
+     <div id="layoutSidenav_content" >
+       <main>
+        <%= render 'shared/notices' %>
+        <%= yield %>
+      </main>
+        <%= render 'shared/footer' %>
+      </div>
+     </div>
   </body>
+ <%else%>
+
+ <body class="bg-image">
+   <%= render 'shared/notices' %>
+     <%= yield %>
+ </body>
+ <%end%>
 </html>

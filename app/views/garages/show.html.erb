@@ -1,0 +1,35 @@
+<div class="container-fluid mt-3">
+  <ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+    <li class="breadcrumb-item active">Ticking & License Portal / Car Details</li>
+  </ol>
+  <div class="card mb-4">
+    <div class="card-body">
+      <h4 class="bg-light text-dark p-2"><i class="fas fa-car"></i> Car Details</h4>
+      <hr>
+      <%if current_user && @garage.user == current_user%>
+        <dl class="dl-horizontal">
+          <dt>Make:</dt>
+          <dd><%= @garage.make.upcase %></dd>
+          <dt>Model:</dt>
+          <dd><%= @garage.model.upcase %></dd>
+
+          <dt>License plate:</dt>
+          <dd><%= @garage.license_plate.upcase %></dd>
+
+          <dt>Year:</dt>
+          <dd><%= @garage.year %></dd>
+      <%end%>
+      </dl>
+    </div>
+  </div>
+  <div class="page-header">
+    <%= link_to garages_path, class: 'btn btn-warning text-dark' do %>
+    <i class="fas fa-list"></i> View All Cars
+    <% end %>
+    <%= link_to edit_garage_path(@garage), class: 'btn btn-secondary text-light' do %>
+    <i class="fas fa-edit"></i>  Edit
+    <% end %>
+  </div>
+
+</div>

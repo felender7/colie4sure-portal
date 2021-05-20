@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("local-time").start()
+require('data-confirm-modal').start()
 
 window.Rails = Rails
 

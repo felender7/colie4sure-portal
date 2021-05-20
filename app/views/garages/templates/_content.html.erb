@@ -1,0 +1,41 @@
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Make</th>
+        <th>Model</th>
+        <th>License plate</th>
+        <th>Year</th>
+        <th>Date Added</th>
+        <th>View</th>
+        <th>   </th>
+
+        <th></th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @garages.each do |garage| %>
+      <%if current_user && garage.user == current_user%>
+      <%= content_tag :tr, id: dom_id(garage), class: dom_class(garage) do %>
+      <td><%= garage.make.upcase %></td>
+      <td><%= garage.model.upcase%></td>
+      <td><%= garage.license_plate.upcase %></td>
+      <td><%= garage.year %></td>
+      <td><%= garage.created_at %></td>
+      <td><%= link_to garage do %>
+        <i class="fas fa-list"></i>
+        <%end%>
+      </td>
+      <td>
+        <%= link_to garage, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } do %>
+        <i class="fas fa-trash"></i>
+        <%end%>
+      </td>
+      <% end %>
+      <% end %>
+      <% end%>
+    </tbody>
+  </table>
+</div>

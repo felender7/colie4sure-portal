@@ -1,0 +1,52 @@
+
+<div class="container-fluid">
+  <div class="col-lg-12">
+    <%= form_with(model: garage, local: true) do |form| %>
+    <% if garage.errors.any? %>
+    <%=render 'garages/templates/error'%>
+    <% end %>
+
+    <div class="form-group">
+      <%#= form.select :year, {}, {prompt:"Select Car Year"}, class: 'form-control',  name:"car-years" , id:"car-years" %>
+      <%= form.text_field :year, class: 'form-control upcase' , placeholder:"Year Model"%>
+
+    </div>
+
+    <div class="form-group">
+      <%#= form.select :make, {},{prompt:"Select Car Make"}, class: 'form-control',  name:"car-makes" , id:"car-makes" %>
+      <%= form.text_field :make, class: 'form-control upcase' , placeholder:"Car Make"%>
+
+    </div>
+
+    <div class="form-group">
+      <%#= form.select :model, {},{prompt:"Select Car Model"}, class: 'form-control',  name:"car-models" , id:"car-models" %>
+      <%= form.text_field :model, class: 'form-control upcase' , placeholder:"Car Model"%>
+
+    </div>
+
+    <div class="form-group">
+      <%= form.text_field :license_plate, class: 'form-control upcase' , placeholder:"License Plate Number" ,maxlength: 10, size: 10, required: :required%>
+    </div>
+
+    <div class="form-group">
+      <% if garage.persisted? %>
+      <div class="float-right">
+        <%= link_to garage, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } do %>
+        <i class="fas fa-trash"></i>
+        <%end%>
+      </div>
+      <% end %>
+
+      <%= form.button(type: "submit", class: "btn btn-secondary text-light" , data: {disable_with:"<i class='fa fa-spinner fa-spin'></i> Saving..." .html_safe }) do %>
+      <i class="fas fa-save"></i> SAVE
+      <% end %>
+
+      <% if garage.persisted? %>
+      <%= link_to "Cancel", garage, class: "btn btn-link" %>
+      <% else %>
+      <%= link_to "Cancel", garages_path, class: "btn btn-link" %>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>

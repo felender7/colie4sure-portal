@@ -80,10 +80,13 @@
                 </a>
 
                 <a class="nav-link" href="#" aria-expanded="false" >
-                    <div class="sb-nav-link-icon"><i class="fas fa-info-circle"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fas fa-phone-square-alt"></i></div>
                     Contact
                 </a>
 
+                <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+                <div class="sb-nav-link-icon"><i class="fas fa-sign-out-alt"></i></div>Logout
+                <%end%>
             </div>
         </div>
 

@@ -1,0 +1,2 @@
+module LicenseRenewalHelper
+end

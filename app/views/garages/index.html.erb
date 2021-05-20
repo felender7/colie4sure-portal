@@ -17,7 +17,7 @@
         </div>
       </div>
       <br>
-      <%if @garages.empty?%>
+      <%if current_user.garages.empty?%>
       <hr>
       <p class="text-center bg-light p-2 text-dark lead"><i class="far fa-folder-open"></i> <br> <small>Nothing has been added yet! </small></p>
       <%else%>

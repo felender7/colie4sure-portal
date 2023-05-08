@@ -1,0 +1,9 @@
+<div id="error_explanation" class="bg-danger p-3 text-light mb-3">
+  <h4><%= pluralize(@garage.errors.count, "error") %> prohibited this garage from being saved:</h4>
+
+  <ul>
+  <% @garage.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+</div>

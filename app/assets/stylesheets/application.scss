@@ -1,0 +1,40 @@
+// $navbar-default-bg: #312312;
+// $light-orange: #ff8c00;
+// $navbar-default-color: $light-orange;
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "bootstrap";
+@import "jumpstart/sticky-footer";
+@import "jumpstart/announcements";
+@import "sidebar";
+
+// Fixes bootstrap nav-brand container overlap
+@include media-breakpoint-down(xs) {
+  .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+// Masquerade alert shouldn't have a bottom margin
+body > .alert {
+  margin-bottom: 0;
+}
+
+
+.upcase{
+text-transform:uppercase;
+}
+.bg-image {
+  background: url(asset_path("bg_image_login.jpg")) no-repeat center center fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+a{
+   color: #ff8c00 !important;
+}

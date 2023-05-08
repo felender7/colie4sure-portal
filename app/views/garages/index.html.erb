@@ -1,0 +1,27 @@
+<div class="container-fluid mt-3">
+  <ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+    <li class="breadcrumb-item active">Ticking & License Portal / My Garage</li>
+  </ol>
+  <div class="card mb-12">
+    <div class="card-body width">
+      <div class="row">
+        <div class="col-sm-6">
+          <h4> <i class="fas fa-car"></i> My Garage</h4>
+        </div>
+
+        <div class="col-sm-6 text-right">
+          <%= link_to new_garage_path, class: 'btn btn-secondary text-light' do %>
+          <i class="fas fa-plus-square"></i> ADD CAR
+          <% end %>
+        </div>
+      </div>
+      <br>
+      <%if current_user.garages.empty?%>
+      <hr>
+      <p class="text-center bg-light p-2 text-dark lead"><i class="far fa-folder-open"></i> <br> <small>Nothing has been added yet! </small></p>
+      <%else%>
+      <%=render 'garages/templates/content' %>
+      <% end %>
+    </div>
+  </div>

@@ -1,0 +1,26 @@
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>License plate</th>
+        <th>Expire Day</th>
+        <th>Amount</th>
+        <th>Pay</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @license_renewals.each do |lp| %>
+      <%if current_user && lp.user == current_user%>
+      <%= content_tag :tr, id: dom_id(lp), class: dom_class(lp) do %>
+        <td><%= lp.license_plate.upcase %></td>
+        <td><%=@r_date.strftime('%Y-%m-%d')%></td>
+        <td>R<%=@amount%>.00 </td>
+        <td><i class="far fa-credit-card"></i></td>
+        <%end%>
+        <br>
+        <% end%>
+        <%end%>
+      </tbody>
+    </table>
+</div>

@@ -1,0 +1,5 @@
+<% if user_signed_in? %>
+<%= render'home/templates/dashboard'%>
+<% else %>
+<%= render'home/templates/guest'%>
+<% end %>
